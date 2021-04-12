@@ -31,10 +31,9 @@ struct NewsServiceImpl: NewsService {
                         .mapError { _ in APIError.decodingError }
                         .eraseToAnyPublisher()
                 } else {
-                    return Fail(error: APIError.errorCode(response.statusCode)).eraseToAnyPublisher()
+                    return Fail(error: APIError.errorCode(response.statusCode))
+                        .eraseToAnyPublisher()
                 }
-                
-                
             }
             .eraseToAnyPublisher()
     }

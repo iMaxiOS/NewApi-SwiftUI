@@ -15,6 +15,8 @@
 		ACF1E9CC262443B700E40473 /* NewEndpoing.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1E9CB262443B700E40473 /* NewEndpoing.swift */; };
 		ACF1E9D0262445DC00E40473 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1E9CF262445DC00E40473 /* APIError.swift */; };
 		ACF1E9D4262447C200E40473 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1E9D3262447C200E40473 /* NewsService.swift */; };
+		ACF1E9D92624535100E40473 /* ResultStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1E9D82624535100E40473 /* ResultStates.swift */; };
+		ACF1E9DF2624541D00E40473 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1E9DE2624541D00E40473 /* NewsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		ACF1E9CB262443B700E40473 /* NewEndpoing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEndpoing.swift; sourceTree = "<group>"; };
 		ACF1E9CF262445DC00E40473 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		ACF1E9D3262447C200E40473 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		ACF1E9D82624535100E40473 /* ResultStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultStates.swift; sourceTree = "<group>"; };
+		ACF1E9DE2624541D00E40473 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +64,13 @@
 		ACF1E9AF26243DB600E40473 /* NewApi */ = {
 			isa = PBXGroup;
 			children = (
+				ACF1E9D72624533C00E40473 /* States */,
 				ACF1E9D2262447B400E40473 /* Service */,
 				ACF1E9CE262445CF00E40473 /* Error */,
 				ACF1E9CA2624439900E40473 /* Endpoint */,
-				ACF1E9C82624401200E40473 /* Views */,
-				ACF1E9C026243F7400E40473 /* Models */,
+				ACF1E9C82624401200E40473 /* View */,
+				ACF1E9DB262453A200E40473 /* ViewModel */,
+				ACF1E9C026243F7400E40473 /* Model */,
 				ACF1E9B026243DB600E40473 /* NewApiApp.swift */,
 				ACF1E9B226243DB600E40473 /* ContentView.swift */,
 				ACF1E9B426243DB800E40473 /* Assets.xcassets */,
@@ -82,19 +88,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		ACF1E9C026243F7400E40473 /* Models */ = {
+		ACF1E9C026243F7400E40473 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				ACF1E9C526243F9800E40473 /* NewsResponse.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		ACF1E9C82624401200E40473 /* Views */ = {
+		ACF1E9C82624401200E40473 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		ACF1E9CA2624439900E40473 /* Endpoint */ = {
@@ -119,6 +125,22 @@
 				ACF1E9D3262447C200E40473 /* NewsService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		ACF1E9D72624533C00E40473 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				ACF1E9D82624535100E40473 /* ResultStates.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		ACF1E9DB262453A200E40473 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ACF1E9DE2624541D00E40473 /* NewsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +215,11 @@
 				ACF1E9D4262447C200E40473 /* NewsService.swift in Sources */,
 				ACF1E9B326243DB600E40473 /* ContentView.swift in Sources */,
 				ACF1E9C626243F9800E40473 /* NewsResponse.swift in Sources */,
+				ACF1E9D92624535100E40473 /* ResultStates.swift in Sources */,
 				ACF1E9CC262443B700E40473 /* NewEndpoing.swift in Sources */,
 				ACF1E9D0262445DC00E40473 /* APIError.swift in Sources */,
 				ACF1E9B126243DB600E40473 /* NewApiApp.swift in Sources */,
+				ACF1E9DF2624541D00E40473 /* NewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
