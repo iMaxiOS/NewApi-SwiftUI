@@ -11,9 +11,10 @@
 		ACF1E9B326243DB600E40473 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1E9B226243DB600E40473 /* ContentView.swift */; };
 		ACF1E9B526243DB800E40473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF1E9B426243DB800E40473 /* Assets.xcassets */; };
 		ACF1E9B826243DB800E40473 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF1E9B726243DB800E40473 /* Preview Assets.xcassets */; };
-		ACF1E9C626243F9800E40473 /* NewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1E9C526243F9800E40473 /* NewModel.swift */; };
+		ACF1E9C626243F9800E40473 /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1E9C526243F9800E40473 /* NewsResponse.swift */; };
 		ACF1E9CC262443B700E40473 /* NewEndpoing.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1E9CB262443B700E40473 /* NewEndpoing.swift */; };
 		ACF1E9D0262445DC00E40473 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1E9CF262445DC00E40473 /* APIError.swift */; };
+		ACF1E9D4262447C200E40473 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1E9D3262447C200E40473 /* NewsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +24,10 @@
 		ACF1E9B426243DB800E40473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACF1E9B726243DB800E40473 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACF1E9B926243DB800E40473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACF1E9C526243F9800E40473 /* NewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewModel.swift; sourceTree = "<group>"; };
+		ACF1E9C526243F9800E40473 /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
 		ACF1E9CB262443B700E40473 /* NewEndpoing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEndpoing.swift; sourceTree = "<group>"; };
 		ACF1E9CF262445DC00E40473 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		ACF1E9D3262447C200E40473 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		ACF1E9AF26243DB600E40473 /* NewApi */ = {
 			isa = PBXGroup;
 			children = (
+				ACF1E9D2262447B400E40473 /* Service */,
 				ACF1E9CE262445CF00E40473 /* Error */,
 				ACF1E9CA2624439900E40473 /* Endpoint */,
 				ACF1E9C82624401200E40473 /* Views */,
@@ -82,7 +85,7 @@
 		ACF1E9C026243F7400E40473 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ACF1E9C526243F9800E40473 /* NewModel.swift */,
+				ACF1E9C526243F9800E40473 /* NewsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,6 +111,14 @@
 				ACF1E9CF262445DC00E40473 /* APIError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		ACF1E9D2262447B400E40473 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				ACF1E9D3262447C200E40473 /* NewsService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,8 +190,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF1E9D4262447C200E40473 /* NewsService.swift in Sources */,
 				ACF1E9B326243DB600E40473 /* ContentView.swift in Sources */,
-				ACF1E9C626243F9800E40473 /* NewModel.swift in Sources */,
+				ACF1E9C626243F9800E40473 /* NewsResponse.swift in Sources */,
 				ACF1E9CC262443B700E40473 /* NewEndpoing.swift in Sources */,
 				ACF1E9D0262445DC00E40473 /* APIError.swift in Sources */,
 				ACF1E9B126243DB600E40473 /* NewApiApp.swift in Sources */,

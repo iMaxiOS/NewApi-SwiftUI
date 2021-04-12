@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NewModel: Codable {
+struct NewsResponse: Codable {
     let article: [Article]
 }
 
