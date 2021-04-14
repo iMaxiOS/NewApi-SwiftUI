@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var isToggle = false
-    @State private var isUserCustomSettings = false
+    @Binding var darkModeEnable: Bool
+    @Binding var systemThemeEnable: Bool
     
     private let header = "Display"
     private let footerString = "System settings will override Dark mode and use the current device theme"
@@ -18,12 +18,18 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 Section(header: Text(header), footer: Text(footerString)) {
-                    Toggle(isOn: $isToggle, label: {
+                    Toggle(isOn: $darkModeEnable, label: {
                         Text("Dark mode")
                     })
+                    .onChange(of: darkModeEnable, perform: { _ in
+                        SystemThemeManager.shared.handleTheme(darkMode: darkModeEnable, system: systemThemeEnable)
+                    })
                     
-                    Toggle(isOn: $isUserCustomSettings, label: {
+                    Toggle(isOn: $systemThemeEnable, label: {
                         Text("Use system settings")
+                    })
+                    .onChange(of: systemThemeEnable, perform: { _ in
+                        SystemThemeManager.shared.handleTheme(darkMode: darkModeEnable, system: systemThemeEnable)
                     })
                 }
                 
@@ -34,7 +40,7 @@ struct SettingsView: View {
                     Link("Contact me via email", destination: URL(string: Constants.email)!)
                     Link("Call me", destination: URL(string: Constants.phone)!)
                 }
-                .foregroundColor(.black)
+                .foregroundColor(Color(.label))
                 .font(.headline)
             }
             .navigationTitle("Settings")
@@ -44,6 +50,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(darkModeEnable: .constant(false), systemThemeEnable: .constant(false))
     }
 }

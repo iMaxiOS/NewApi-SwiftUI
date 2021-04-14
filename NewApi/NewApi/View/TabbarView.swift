@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TabbarView: View {
+    @AppStorage("darkModeEnable") private var darkModeEnable = false
+    @AppStorage("systemThemeEnable") private var systemThemeEnable = false    
+    
     var body: some View {
         TabView {
             NewsView()
@@ -16,11 +19,14 @@ struct TabbarView: View {
                     Text("News")
                 }
             
-            SettingsView()
+            SettingsView(darkModeEnable: $darkModeEnable, systemThemeEnable: $systemThemeEnable)
                 .tabItem {
                     Image(systemName: "gearshape.fill")
                     Text("Settings")
                 }
+        }
+        .onAppear {
+            SystemThemeManager.shared.handleTheme(darkMode: darkModeEnable, system: systemThemeEnable)
         }
     }
 }
