@@ -9,6 +9,8 @@ import SwiftUI
 import URLImage
 
 struct ArticleView: View {
+    @State var isLoading: Bool
+    
     var article: Article
     
     var body: some View {
@@ -36,6 +38,7 @@ struct ArticleView: View {
                     Text(article.title)
                         .foregroundColor(.black)
                         .font(.system(size: 18, weight: .semibold, design: .rounded))
+                        .lineLimit(3)
                     
                     Text(article.source)
                         .foregroundColor(.gray)
@@ -55,12 +58,14 @@ struct ArticleView: View {
                 PlaceholderImageView()
             }
         }
+        .redacted(reason: isLoading ? .placeholder : [])
+        .allowsHitTesting(!isLoading)
     }
 }
 
 struct ArticleView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleView(article: Article.dummyData)
+        ArticleView(isLoading: false, article: Article.dummyData.last!)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -15,20 +15,16 @@ struct NewsView: View {
         NavigationView {
             Group {
                 switch viewModel.state {
-                case .loading:
-                    ProgressView()
                 case .failed(let error):
                     ErrorView(error: error, actionHandler: viewModel.getArticle)
-                case .success(let articles):
-                    NavigationView {
-                        List(articles) { article in
-                            ArticleView(article: article)
-                                .onTapGesture {
-                                    loadLink(url: article.url)
-                                }
-                        }
-                        .navigationTitle("Articles")
+                default:
+                    List(viewModel.isLoading ? Article.dummyData : viewModel.articles) { article in
+                        ArticleView(isLoading: viewModel.isLoading, article: article)
+                            .onTapGesture {
+                                loadLink(url: article.url)
+                            }
                     }
+                    .navigationTitle("Articles")
                 }
             }
         }
