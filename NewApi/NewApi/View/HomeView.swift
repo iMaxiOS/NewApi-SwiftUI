@@ -8,15 +8,36 @@
 import SwiftUI
 
 struct HomeView: View {
-//    var viewModel = NewsViewModelImpl(service: NewsServiceImpl())
+    @Environment(\.openURL) var openUrl
+    @StateObject var viewModel = NewsViewModelImpl(service: NewsServiceImpl())
     
     var body: some View {
-        NavigationView {
-            List {
-                
+            Group {
+                switch viewModel.state {
+                case .loading:
+                    ProgressView()
+                case .failed(let error):
+                    ErrorView(error: error, actionHandler: viewModel.getArticle)
+                case .success(let articles):
+                    NavigationView {
+                        List(articles) { article in
+                            ArticleView(article: article)
+                                .onTapGesture {
+                                    loadLink(url: article.url)
+                                }
+                        }
+                        .navigationTitle("Articles")
+                    }
+                }
             }
-            .navigationTitle("News")
-        }
+            .onAppear(perform: viewModel.getArticle)
+        
+    }
+    
+    func loadLink(url: String?) {
+        guard let link = url, let url = URL(string: link) else { return }
+        
+        openUrl(url)
     }
 }
 
