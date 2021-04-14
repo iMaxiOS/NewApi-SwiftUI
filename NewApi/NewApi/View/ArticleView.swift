@@ -40,6 +40,16 @@ struct ArticleView: View {
                     Text(article.source)
                         .foregroundColor(.gray)
                         .font(.footnote)
+                    
+                    if let date = article.date {
+                        HStack {
+                            Text(date, style: .date)
+                                .bold()
+                            Text(date, style: .time)
+                        }
+                        .foregroundColor(.gray)
+                        .font(.footnote)
+                    }
                 }
             } else {
                 PlaceholderImageView()

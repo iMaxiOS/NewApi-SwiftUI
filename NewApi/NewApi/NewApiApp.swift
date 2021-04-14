@@ -11,7 +11,7 @@ import SwiftUI
 struct NewApiApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            TabbarView()
         }
     }
 }

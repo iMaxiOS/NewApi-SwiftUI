@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct NewsView: View {
     @Environment(\.openURL) var openUrl
     @StateObject var viewModel = NewsViewModelImpl(service: NewsServiceImpl())
     
     var body: some View {
+        NavigationView {
             Group {
                 switch viewModel.state {
                 case .loading:
@@ -30,8 +31,8 @@ struct HomeView: View {
                     }
                 }
             }
-            .onAppear(perform: viewModel.getArticle)
-        
+        }
+        .onAppear(perform: viewModel.getArticle)
     }
     
     func loadLink(url: String?) {
@@ -43,6 +44,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        NewsView()
     }
 }
